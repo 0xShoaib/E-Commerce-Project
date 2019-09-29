@@ -273,6 +273,14 @@ var cart = document.getElementById("cart-count");
 var myCartData = [];
 var cartIntialValue;
 
+if(localStorage.getItem('cart-count') == null) {
+	localStorage.setItem('cart-count', '0');
+} else {
+	var cartValue = localStorage.getItem('cart-count');
+	localStorage.setItem('cart-count', cartValue);
+}
+
+
 // ---------------- Increase Cart Count -----------------------
 function cartCount() {
   if (window.localStorage.getItem("cart-count") === null) {
